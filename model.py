@@ -59,8 +59,8 @@ def cmatrix(y_true, y_pred):
     # define confusion matrix, convert to dataframe
     cmatrix = confusion_matrix(y_true, y_pred)
     cmatrix = pd.DataFrame(confusion_matrix(y_true, y_pred),
-                           index=['True Retain', 'True Churn'],
-                           columns=['Predict Retain', 'Predict Churn'])
+                           index=['True blue', 'True red'],
+                           columns=['Predict blue', 'Predict red'])
     # assign TN, FN, TP, FP
     true_neg = cmatrix.iloc[0, 0]
     false_neg = cmatrix.iloc[0, 1]
@@ -91,8 +91,8 @@ def model_report(y_true, y_pred):
             *** Model  Report ***  
             ---------------------              
  _____________________________________________
-|            Positive Case: blue win==1          |
-|            Negative Case: red win==0          |
+|            Positive Case: red win==1          |
+|            Negative Case: blue win==0          |
 |---------------------------------------------|
 |                 Accuracy: {report_dict['accuracy']:>8.2%}          |
 |       True Positive Rate: {cmatrix_dict['tpr']:>8.2%}          |
