@@ -35,6 +35,7 @@ def op_gg_webscrape(pages):
                 player_names.append(str(pro))
     return player_names
 
+
 def get_puuid(name_list,df):
     counter = 0
     for name in name_list:
@@ -49,14 +50,17 @@ def get_puuid(name_list,df):
             summoner_info = response.json()
             info = {'puuid':summoner_info['puuid'],
                    'username':summoner_info['name']}
-            df.append(info,ignore_index = True)
+            df = df.append(info,ignore_index = True)
         else:
             response = requests.get(f"https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{name}?api_key={api_key}")
             summoner_info = response.json()
             if len(summoner_info) > 1:
                 info = {'puuid':summoner_info['puuid'],
                        'username':summoner_info['name']}
-                df.append(info,ignore_index = True)
+                df = df.append(info,ignore_index = True)
             else:
                 print(summoner_info)
     return df
+
+# username_df = pd.DataFrame(columns = ['puuid','username'])
+# df = get_puuid(name_list,username_df)
