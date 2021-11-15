@@ -77,7 +77,6 @@ def cmatrix(y_true, y_pred):
 
 def model_report(y_true, y_pred):
     '''
-    CREDIT TO RAY
     Takes in true and predicted values to create classificant report
     dictionary and uses cmatrix function to obtain positive and
     negative prediction rates, prints out table containing all metrics
@@ -92,8 +91,8 @@ def model_report(y_true, y_pred):
             *** Model  Report ***  
             ---------------------              
  _____________________________________________
-|            Positive Case: churn==1          |
-|            Negative Case: churn==0          |
+|            Positive Case: blue win==1          |
+|            Negative Case: red win==0          |
 |---------------------------------------------|
 |                 Accuracy: {report_dict['accuracy']:>8.2%}          |
 |       True Positive Rate: {cmatrix_dict['tpr']:>8.2%}          |
