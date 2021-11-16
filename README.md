@@ -19,11 +19,13 @@ Link to where we built the original dataset from: (https://developer.riotgames.c
 
 **Project Goals**
 
-- Build a classification model that can take the stats from a given time in the game and predict the winner.
+- Build a classification model that can accurately predict the winner of a game given the information at the 20 minute mark.
 
 **Data summary**
+- The data is only from the north American Server
+- The data contains pro players, and other top performers of the game, The lowest ranking players are in masters, which is still the top .15% of players.
 
-
+The data was pulled from the riot api using names that were gathered from webscraping two popular League of legends sites called op.gg (https://na.op.gg/ranking/ladder/) and trackingthepros (https://www.trackingthepros.com/players/na/) op.gg was used to grab roughly the top 3000 players in the ranked ladder, and trackingthepros was used to grab the names of the current professional league of legends players.
 
 
 ### Statistical testing:
@@ -47,6 +49,7 @@ Link to where we built the original dataset from: (https://developer.riotgames.c
 - [Project Title](#project-title)
 - [Executive Summary](#executive-summary)
 - [Table of contents](#table-of-contents)
+- [League of legends Dictionary](#League-of-legends-dictionary)
 - [Data Dictionary](#data-dictionary)
 - [Data Science Pipeline](#data-science-pipline)
     - [Acquire](#acquire)
@@ -58,6 +61,37 @@ Link to where we built the original dataset from: (https://developer.riotgames.c
 - [Given More Time](#given-more-time)
 - [Recreate This Project](#recreate-this-project)
 - [Footer](#footer)
+
+# League of legends Dictionary
+[(Back to top)](#table-of-contents)
+<!-- Drop that sweet sweet dictionary here-->
+
+| League terms  | Plain explination                                         | 
+|:--------------|:----------------------------------------------------------|
+| Riot|Riot games is the company that owns league of legends.               |
+| Dragon|A neutral monster that both teams can take. Gives bonuses.         |
+| herald|A neutral monster that both teams can take. Takes towers.          |
+| Baron|A neutral monster that both teams can take. Gives bonuses.          |
+| Champion|A playable character in the game.                                |
+| Summoner|A name for the players, each player is a summoner.               |
+| Summoners rift|The map that competative games of league are held on.      |
+| Lane|There are three lanes on summoners rift and each has differences.    |
+| Jungle|A role that has no lane but assists the other lanes.               |
+| Minion|Small ai controlled fighters that give gold when killed.           |
+| Monster|Normally stronger then minions they spawn in the jungle.          |
+| Tower|A structure in the game that defends itself.                        |
+| Inhibitor|A structure that when taken strengthens the other teams minions.|
+| Abilities|spells or special moves given to each character.                |
+| Gold|Players get gold by killing things on the map.                       |
+| Items|Players use gold to buy items to make themselves stronger.          |
+| Armor|Reduces damage from physiscal attacks.                              |
+| Magic Resist|Reduces damage from magic attacks.                           |
+| Magic damage|Increases damage of abilities, and sometime attacks.         |
+| Physical damage|Increses damage of attacks, and sometimes abilities.      |
+| True Damage|Ignores armor and magic resist.                               |
+| Blue Team|Blue team starts the game at the bottom left.                   |
+| Red Team|Red team starts the game at the top right.                       |
+| puuid|An id given to each player on the riot api.                         |
 
 # Data Dictionary
 [(Back to top)](#table-of-contents)
@@ -100,12 +134,14 @@ Following best practices I documented my progress throughout the project and wil
 ### Acquire
 [(Back to top)](#table-of-contents)
 <!-- Describe your acquire process -->
-
-
+- Webscraped two sites to gather summoner names (username) for the Riot games developer api.
+- Used the summoner names to get a unique puuid, which is league of legends unique identifier for players.
+- Using the puuid we were able to get the matchid's of the last 100 games for each of the players.
+- After we had the matchid's we pulled in json files for each match and the timeline of events that happened in the match.
 ### Prepare
 [(Back to top)](#table-of-contents)
 <!-- Describe your prepare process -->
-
+- The json files that were gathered from the Riot api
 
 ### Explore
 [(Back to top)](#table-of-contents)
