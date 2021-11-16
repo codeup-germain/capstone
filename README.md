@@ -169,7 +169,15 @@ Following best practices I documented my progress throughout the project and wil
 # Recreate This Project
 [(Back to top)](#table-of-contents)
 <!-- How can they do what you do?-->
-
+**Easy Recreation**
+- Make a copy of our games_final.csv in order to avoid acquiring through the riot api.
+**Hard Recreation**
+- Make a Riot developer account.
+- Generate a api key.
+- Gather the names of top rated player in League, and use the league api to get each players puuid.
+- Use each players puuid to get a list of matches from their match history.
+- Pull the data from each league match using:
+    "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/battlebud?api_key={api_key}"
 # Footer
 [(Back to top)](#table-of-contents)
 <!-- LET THEM KNOW WHO YOU ARE (linkedin links) close with a joke. -->
