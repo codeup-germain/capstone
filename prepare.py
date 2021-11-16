@@ -27,8 +27,45 @@ def prepare(jsonList, jsonList2,time):
     return df
 
 def clean(df):
-    return df
+    df = df.fillna(0)
+    columns=['deathsplayer_',
+                'goldPerSecond_',
+                'jungleMinionsKilled_',
+                'killsplayer_',
+                'level_',
+                'magicDamageDoneToChampions_',
+                'minionsKilled_',
+                'physicalDamageDoneToChampions_',
+                'timeEnemySpentControlled_',
+                'totalDamageDoneToChampions_',
+                'totalGold_',
+                'trueDamageDoneToChampions_',
+                'ward_player_',
+                'assistsplayer_',
+                'xp_']
 
+    for col in columns:
+        df[f'team_{col}100'] = 0
+        df[f'team_{col}200'] = 0
+
+    for index, value in enumerate(df.iterrows()):
+        for col in columns:
+            
+            total = 0
+            
+            for i in range(1, 6):
+                total += int(df.iloc[index][f'{col}{i}'])
+            
+            df.at[index, f'team_{col}100'] = total
+        
+            total = 0
+            
+            for i in range(6, 11):
+                total += int(df.iloc[index][f'{col}{i}'])
+            
+            df.at[index, f'team_{col}200'] = total
+    return df
+    
 def get_player_kda(data, time):
     df = pd.DataFrame()
     for index in range(len(data['info']['frames'])):
