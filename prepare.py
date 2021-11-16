@@ -21,10 +21,13 @@ def prepare(jsonList, jsonList2,time):
             
             print(f"Finished with: {index} of {len(jsonList)}")
         else:
-            print(f"Skipping: {index} due to <20 min")
+            print(f"Skipping: {index} due to <20 min or not classic")
+    
+    df = clean(df)
     return df
 
-
+def clean(df):
+    return df
 
 def get_player_kda(data, time):
     df = pd.DataFrame()
@@ -90,6 +93,41 @@ def get_player_kda(data, time):
 
     # Grabbing target, winning team
     d['winningTeam'] = int(df[df.type == 'GAME_END'].winningTeam)
+
+    df = pd.DataFrame()
+    for index in range(len(data['info']['frames'])):
+        for event in data['info']['frames'][index]['events']:
+            if event['type'] == 'WARD_PLACED':
+                df = df.append(event, ignore_index =True)
+
+    kills_df = df[df.type == 'WARD_PLACED']
+    for index, player in enumerate(kills_df[kills_df.type=='WARD_PLACED'].creatorId.value_counts().sort_index()):
+
+        # Grabbing baron and saving values to same dictionary
+        d['ward_player_'+str(int(kills_df[kills_df.type=='WARD_PLACED'].creatorId.value_counts().sort_index().index[index]))] =\
+        kills_df[kills_df.type=='WARD_PLACED'].creatorId.value_counts().sort_index().iloc[index]
+    df = pd.DataFrame()
+    
+    for index in range(len(data['info']['frames'])):
+        for event in data['info']['frames'][index]['events']:
+            if event['type'] == 'BUILDING_KILL':
+                df = df.append(event, ignore_index =True)
+
+    kills_df = df[df.type == 'BUILDING_KILL']
+
+    for index, player in enumerate(kills_df[kills_df.buildingType =='TOWER_BUILDING'].teamId.value_counts().sort_index()):
+
+        # Grabbing baron and saving values to same dictionary
+        d['towers_lost_team'+str(int(kills_df[kills_df.buildingType =='TOWER_BUILDING'].teamId.value_counts().sort_index().index[index]))] =\
+        kills_df[kills_df.buildingType =='TOWER_BUILDING'].teamId.value_counts().sort_index().iloc[index]
+    
+    for index, player in enumerate(kills_df[kills_df.buildingType =='INHIBITOR_BUILDING'].teamId.value_counts().sort_index()):
+
+        # Grabbing baron and saving values to same dictionary
+        d['inhibs_lost_team'+str(int(kills_df[kills_df.buildingType =='INHIBITOR_BUILDING'].teamId.value_counts().sort_index().index[index]))] =\
+        kills_df[kills_df.buildingType =='INHIBITOR_BUILDING'].teamId.value_counts().sort_index().iloc[index]
+
+
     return d
 
 def get_player_stats(data, time):
