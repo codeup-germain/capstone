@@ -5,16 +5,20 @@ from env import api_key
 import re
 
 
-def prepare(jsonList, time):
+def prepare(jsonList, jsonList2,time):
     df = pd.DataFrame()
     
     for index, data in enumerate(jsonList):
-        if (data['info']['frames'][-1]['events'][-1]['timestamp']/60000) >= 20:
+        if ((data['info']['frames'][-1]['events'][-1]['timestamp']/60000) >= 20) & (str(jsonList2[index]['info']['gameMode'])=='CLASSIC'):
             final_d = {}
             kda = get_player_kda(data, time)
             final_d.update(kda)
             final_d.update(get_player_stats(data, time))
+            final_d["gameMode"] = str(jsonList2[index]['info']['gameMode'])
+            final_d["gameType"] = str(jsonList2[index]['info']['gameType'])
+            final_d['gameVersion'] = str(jsonList2[index]['info']['gameVersion'])
             df = df.append(final_d, ignore_index=True)
+            
             print(f"Finished with: {index} of {len(jsonList)}")
         else:
             print(f"Skipping: {index} due to <20 min")
