@@ -88,6 +88,7 @@ The data was pulled from the riot api using names that were gathered from webscr
 | Wards           |An item that gives vision in the jungle, and in bushes.          |
 | Crowd Control   |A structure in the game that defends itself.                     |
 | Inhibitor       |A structure that when taken strengthens the other teams minions. |
+| Nexus           |Goal of players to take the enemy nexus. How you win.            |
 | Abilities       |spells or special moves given to each character.                 |
 | Gold            |Players get gold by killing things on the map.                   |
 | Items           |Players use gold to buy items to make themselves stronger.       |
@@ -105,7 +106,7 @@ The data was pulled from the riot api using names that were gathered from webscr
 <!-- Drop that sweet sweet dictionary here-->
 
 | Feature                    | Datatype                | Definition   |
-|:---------------------------|:------------------------|:-------------|
+|:----------------------|:------------------------|:-------------|
 | RedTeamKills|int64|Gives a total of the red teams kills.|
 | BlueTeamKills|int64|Gives a total of the blue teams kills|
 | RedTeamTowerKills|int64|Gives a total of the number of towers taken by the red team|
@@ -148,7 +149,8 @@ Following best practices I documented my progress throughout the project and wil
 ### Prepare
 [(Back to top)](#table-of-contents)
 <!-- Describe your prepare process -->
-- The json files that were gathered from the Riot api
+- From json files that were gathered from the Riot api, functions were created that would build a dataframe of both team, and individual stats from the 20 minute mark.
+- Columns were renamed to change the team id's of 100 to blue and 200 to red.
 
 ### Explore
 [(Back to top)](#table-of-contents)
