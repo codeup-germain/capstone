@@ -62,36 +62,43 @@ The data was pulled from the riot api using names that were gathered from webscr
 - [Recreate This Project](#recreate-this-project)
 - [Footer](#footer)
 
-# League of legends Dictionary
+# League of Legends Common Termonology
 [(Back to top)](#table-of-contents)
 <!-- Drop that sweet sweet dictionary here-->
 
-| League terms  | Plain explination                                         | 
-|:--------------|:----------------------------------------------------------|
-| Riot|Riot games is the company that owns league of legends.               |
-| Dragon|A neutral monster that both teams can take. Gives bonuses.         |
-| herald|A neutral monster that both teams can take. Takes towers.          |
-| Baron|A neutral monster that both teams can take. Gives bonuses.          |
-| Champion|A playable character in the game.                                |
-| Summoner|A name for the players, each player is a summoner.               |
-| Summoners rift|The map that competative games of league are held on.      |
-| Lane|There are three lanes on summoners rift and each has differences.    |
-| Jungle|A role that has no lane but assists the other lanes.               |
-| Minion|Small ai controlled fighters that give gold when killed.           |
-| Monster|Normally stronger then minions they spawn in the jungle.          |
-| Tower|A structure in the game that defends itself.                        |
-| Inhibitor|A structure that when taken strengthens the other teams minions.|
-| Abilities|spells or special moves given to each character.                |
-| Gold|Players get gold by killing things on the map.                       |
-| Items|Players use gold to buy items to make themselves stronger.          |
-| Armor|Reduces damage from physiscal attacks.                              |
-| Magic Resist|Reduces damage from magic attacks.                           |
-| Magic damage|Increases damage of abilities, and sometime attacks.         |
-| Physical damage|Increses damage of attacks, and sometimes abilities.      |
-| True Damage|Ignores armor and magic resist.                               |
-| Blue Team|Blue team starts the game at the bottom left.                   |
-| Red Team|Red team starts the game at the top right.                       |
-| puuid|An id given to each player on the riot api.                         |
+| League terms    | Plain explination                                               | 
+|:----------------|:----------------------------------------------------------------|
+| Riot            |Riot games is the company that owns league of legends.           |
+| Kill            |Given to the player that deals the final blow. Rewards gold.     |
+| Assist          |Given to the player(s) that help in a kill. Rewards some gold.   |
+| Death           |When players lose all health. Temporarily taken out of game.     |
+| Level           |Each level makes your character stronger. Max level: 18.         |
+| Experience(xp)  |Used to level up.Experienced gained for being near the action.   |
+| Dragon          |A neutral monster that both teams can take. Gives bonuses.       |
+| herald          |A neutral monster that both teams can take. Takes towers.        |
+| Baron           |A neutral monster that both teams can take. Gives bonuses.       |
+| Champion        |A playable character in League of legends.                       |
+| Summoner        |A name for the players, each player is a summoner.               |
+| Summoners rift  |The map that competative games of league are held on.            |
+| Lane            |There are three lanes on summoners rift and each has differences.|
+| Jungle          |A role that has no lane but assists the other lanes.             |
+| Minion          |Small ai controlled fighters that give gold when killed.         |
+| Monster         |Normally stronger then minions they spawn in the jungle.         |
+| Tower           |A structure in the game that defends itself.                     |
+| Wards           |An item that gives vision in the jungle, and in bushes.          |
+| Crowd Control   |A structure in the game that defends itself.                     |
+| Inhibitor       |A structure that when taken strengthens the other teams minions. |
+| Abilities       |spells or special moves given to each character.                 |
+| Gold            |Players get gold by killing things on the map.                   |
+| Items           |Players use gold to buy items to make themselves stronger.       |
+| Armor           |Reduces damage from physiscal attacks.                           |
+| Magic Resist    |Reduces damage from magic attacks.                               |
+| Magic damage    |Increases damage of abilities, and sometime attacks.             |
+| Physical damage |Increses damage of attacks, and sometimes abilities.             |
+| True Damage     |Ignores armor and magic resist.                                  |
+| Blue Team       |Blue team starts the game at the bottom left.                    |
+| Red Team        |Red team starts the game at the top right.                       |
+| puuid           |An encrypted id given to each player on the riot api.            |
 
 # Data Dictionary
 [(Back to top)](#table-of-contents)
