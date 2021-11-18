@@ -30,22 +30,26 @@ def prep(df):
                 total = value
             
         df.at[index, 'RedTeamMVPKills'] = total
+
+    # __Drop 'killsplayer_0' Column__
+
+    # Although this data has already been prepared, 
+    # I still need to drop the column called 'killsplayer_0'.
+    # It represents how many kills were made by game objects, not players, and contains several null values.
+    
     df.drop(columns = ['killsplayer_0'], inplace = True)
 
-    X_train, X_test, y_train, y_test = split(df)
-    
-    return X_train, X_test, y_train, y_test
+    df = pd.get_dummies(df, drop_first = True)
+
+    train, test = split(df)
+
+    return train, test
 
 def split(df):
     
-    #X group = features, y group = target
-    X, y = df.drop(columns = ['winningTeam']), df.winningTeam
+    train, test = train_test_split(df, test_size = 0.2, random_state = 123)
 
-    #Encode categorical features in the data set
-    X = pd.get_dummies(X, drop_first = True)    
-    
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 123)
-    return X_train, X_test, y_train, y_test
+    return train, test
 
 def prepare(jsonList, jsonList2,time):
     df = pd.DataFrame()
