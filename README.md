@@ -29,8 +29,6 @@ League of Legends is the largest eSport in the world that generated $1.75 billio
 The data was pulled from the riot api using names that were gathered from webscraping two popular League of legends sites called op.gg (https://na.op.gg/ranking/ladder/) and trackingthepros (https://www.trackingthepros.com/players/na/) op.gg was used to grab roughly the top 3000 players in the ranked ladder, and trackingthepros was used to grab the names of the current professional league of legends players.
 
 
-### Statistical testing:
-
 
 
 ### Recommendations
@@ -39,10 +37,10 @@ The data was pulled from the riot api using names that were gathered from webscr
 
 
 ### Problem Statement:
-
+League of Legends is growing and with that comes increasing demands from coaches, analysts, casters, and the game developers. Coaches, analysts, and casters always need good data to make key decisions and develop better strategies and deeper understandings of what is the most important factors of a game. Game developers need to keep the game fair and fun, to continue developing their playerbase to stay at the top of esports and gaming popularity.
 
 ### Proposed solution:
-
+Create a machine learning model that can accuratly determine the team that will win based on certian features of a game, and what features have the largest impact on a teams success.
 
 # Table of contents
 <!-- Add a table of contents for your project -->
@@ -166,6 +164,8 @@ Following best practices I documented my progress throughout the project and wil
 <!-- Describe your explore process -->
 
 
+#### Statistical testing:
+
 ### Model
 [(Back to top)](#table-of-contents)
 <!-- Describe your modeling process -->
@@ -186,11 +186,11 @@ Following best practices I documented my progress throughout the project and wil
 [(Back to top)](#table-of-contents)
 <!-- Describe your evaluation process -->
 **Test Accuracy**
-
+- Waiting for final draft
 **Test Precision**
-
+- Waiting for final draft
 **Test Recall**
-
+- Waiting for final draft
 # Conclusion
 [(Back to top)](#table-of-contents)
 <!-- Wrap up with conclusions and takeaways -->
@@ -198,7 +198,7 @@ Following best practices I documented my progress throughout the project and wil
 # Given More Time/ Next steps
 [(Back to top)](#table-of-contents)
 <!-- LET THEM KNOW WHAT YOU WISH YOU COULD HAVE DONE-->
-
+- Make a live dashboard that updates every 5 minutes updating the chances of winning.
 # Recreate This Project
 [(Back to top)](#table-of-contents)
 <!-- How can they do what you do?-->
