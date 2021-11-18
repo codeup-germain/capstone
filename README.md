@@ -154,7 +154,9 @@ Following best practices I documented my progress throughout the project and wil
 - Columns were renamed to change the team id's of 100 to blue and 200 to red.
 - Replaced nulls with zero.
 - Split data for exploration.
+
 **Feature Engineering**
+
 - Gold difference
 - MVP stats
 
@@ -170,6 +172,8 @@ Following best practices I documented my progress throughout the project and wil
 - Split the data into X and y groups and into train and test datasets.
 - Utilized cross validation and grid search.
 - Created optimized random forest classifier.
+- Best performing fe
+- Refit the best performing model on our entire train dataset.
 
 **Model accuracy**
 
