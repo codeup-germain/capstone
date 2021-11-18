@@ -66,5 +66,21 @@ def get_puuid(name_list,df):
                 print(summoner_info)
     return df
 
+team_data_list = ['riftherald_team100',
+                  'inhibs_lost_team100',
+                  'team_totalGold_100',
+                  'team_trueDamageDoneToChampions_100',
+                  'team_ward_player_100',
+                  'team_assistsplayer_100',
+                  'team_xp_100',
+                 'team_deathsplayer_100',
+                  'team_jungleMinionsKilled_100',
+                 'team_killsplayer_100',
+                 'team_level_100',
+                 'team_magicDamageDoneToChampions_100',
+                 'team_minionsKilled_100',
+                 'team_physicalDamageDoneToChampions_100',
+                 'team_timeEnemySpentControlled_100']
+
 # username_df = pd.DataFrame(columns = ['puuid','username'])
 # df = get_puuid(name_list,username_df)
