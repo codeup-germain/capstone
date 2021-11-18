@@ -1,6 +1,7 @@
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
+from sklearn.model_selection import train_test_split
 from env import api_key
 import re
 
@@ -29,7 +30,22 @@ def prep(df):
                 total = value
             
         df.at[index, 'RedTeamMVPKills'] = total
-    return df
+    df.drop(columns = ['killsplayer_0'], inplace = True)
+
+    X_train, X_test, y_train, y_test = split(df)
+    
+    return X_train, X_test, y_train, y_test
+
+def split(df):
+    
+    #X group = features, y group = target
+    X, y = df.drop(columns = ['winningTeam']), df.winningTeam
+
+    #Encode categorical features in the data set
+    X = pd.get_dummies(X, drop_first = True)    
+    
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 123)
+    return X_train, X_test, y_train, y_test
 
 def prepare(jsonList, jsonList2,time):
     df = pd.DataFrame()

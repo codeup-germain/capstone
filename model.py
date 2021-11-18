@@ -4,7 +4,67 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix, classification_report
+from sklearn.model_selection import GridSearchCV, train_test_split
+from sklearn.ensemble import AdaBoostClassifier
 import pandas as pd
+
+def get_random_forest_models(X_train, y_train, param_dict, cv = 5):
+    """
+    This function creates and returns an optimized random forest classification model. It also
+    prints out the best model's mean cross-validated accuracy score and parameters.
+    
+    This function takes in the X and y training sets to fit the models.
+    
+    This function takes in a dictionary that contains the parameters to be iterated through.
+    
+    This function also takes in a value for the number of cross validation folds to do.
+    The cv value defaults to 5.
+    """
+    #Create the classifier model
+    clf = RandomForestClassifier(random_state = 123)
+    
+    #Create the GridSearchCV object
+    grid = GridSearchCV(clf, param_dict, cv = 5)
+    
+    #Fit the GridSearchCV object
+    grid.fit(X_train, y_train)
+    
+    #Print the best model's score and parameters
+    print('Mean Cross-Validated Accuracy: ', round(grid.best_score_, 4))
+    print('Max Depth: ', grid.best_params_['max_depth'])
+    print('Min Samples Per Leaf: ', grid.best_params_['min_samples_leaf'])
+    
+    #Return the best model
+    return grid.best_estimator_
+
+def get_adaBoosted_model(X_train, y_train, model_to_boost, param_dict, cv = 5):
+    """
+    This function creates and returns an optimized AdaBoosted random forest classification model. It also
+    prints out the best model's mean cross-validated accuracy score and parameters.
+    
+    This function takes in the X and y training sets to fit the models.
+    
+    This function takes in a dictionary that contains the parameters to be iterated through.
+    
+    This function also takes in a value for the number of cross validation folds to do.
+    The cv value defaults to 5.
+    """
+    #Create the AdaBoost Classifier
+    adaBoost_clf = AdaBoostClassifier(model_to_boost, random_state = 123)
+    
+    #Create the GridSearchCV object
+    grid = GridSearchCV(adaBoost_clf, param_dict, cv = 5)
+    
+    #Fit the GridSearchCV object
+    grid.fit(X_train, y_train)
+    
+    #Print the best model's score and parameters
+    print('Mean Cross-Validated Accuracy: ', round(grid.best_score_, 4))
+    print('Num Estimators: ', grid.best_params_['n_estimators'])
+    print('Learning Rate: ', grid.best_params_['learning_rate'])
+    
+    #Return the best model
+    return grid.best_estimator_
 
 def baseline_acc(X,y, strategy = "most_frequent",random_state = 174):
     # generates a baseline model using most frequent, since there are only two outcomes we are predicting.
