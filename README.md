@@ -16,7 +16,17 @@ League of Legends is the largest eSport in the world that generated $1.75 billio
 
 # Executive Summary
 <!-- Add a demo for your project -->
+### Acquisition
+- Acquired over 20,000 High ranked League of Legends players matches through Riot's API.
 
+### Exploration
+- We found the number of tower objectives lost by a team was a key driver to predicting the outcome of a match.
+
+### Modeling
+- Our top model is a Random Forrest Classifier.
+
+### Conclusion
+- We discovered that teams that focus on the objectives of the game have a higher winrate.
 
 ### Project Goals
 
@@ -32,7 +42,7 @@ The data was pulled from the riot api using names that were gathered from webscr
 
 
 ### Recommendations
-
+- Players should focus their attention on grouping and pushing towers,
 
 
 
