@@ -9,7 +9,8 @@
 
 <!-- Describe your project in brief -->
 Link to where we acquired the original dataset from: (https://developer.riotgames.com/)
-
+# Project Summary
+League of Legends is the largest eSport in the world that generated $1.75 billion dollars for Riot Games in 2020 alone. An average professional match can last anywhere between 45-60 minutes, and we are creating a model that predicts the outcome of a match by the 20 minute mark. This can be utilized by professional analysts of the game, applied to other sports, and help game developers discover any imbalances of the game mechanics.
 
 
 
@@ -19,7 +20,7 @@ Link to where we acquired the original dataset from: (https://developer.riotgame
 
 **Project Goals**
 
-- Build a classification model that can accurately predict the winner of a game given the information at the 20 minute mark.
+- Create a model that will predict the probability of winning for each team by the 20 minute mark of a LoL match using live data scraped off of Riot’s api.
 
 **Data summary**
 - The data is only from the north American Server
@@ -35,8 +36,7 @@ The data was pulled from the riot api using names that were gathered from webscr
 ### Recommendations
 
 
-# Project Summary
-League of Legends
+
 
 ### Problem Statement:
 
