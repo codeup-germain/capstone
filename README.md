@@ -18,11 +18,11 @@ League of Legends is the largest eSport in the world that generated $1.75 billio
 <!-- Add a demo for your project -->
 
 
-**Project Goals**
+### Project Goals
 
 - Create a model that will predict the probability of winning for each team by the 20 minute mark of a LoL match using live data scraped off of Riot’s api.
 
-**Data summary**
+### Data summary
 - The data is only from the north American Server
 - The data contains pro players, and other top performers of the game, The lowest ranking players are in masters, which is still the top .15% of players.
 
