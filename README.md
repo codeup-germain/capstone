@@ -167,11 +167,12 @@ Following best practices I documented my progress throughout the project and wil
 ### Model
 [(Back to top)](#table-of-contents)
 <!-- Describe your modeling process -->
-- Split the data into X and y groups.
-- Split into train and test datasets.
+- Split the data into X and y groups and into train and test datasets.
 - Utilized cross validation and grid search.
 - Created optimized random forest classifier.
+
 **Model accuracy**
+
 - ~95% mean cross validation accuracy.
 - Best performing fe
 
