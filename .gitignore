@@ -2,4 +2,4 @@ env.py
 __pycache__
 .ipynb_checkpoints/
 *.json
-json_folder
+json
