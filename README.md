@@ -8,7 +8,7 @@
 ![GitHub last commit](https://img.shields.io/badge/last%20commit-Oct%202021-green)
 
 <!-- Describe your project in brief -->
-Link to where we built the original dataset from: (https://developer.riotgames.com/)
+Link to where we acquired the original dataset from: (https://developer.riotgames.com/)
 
 
 
@@ -36,6 +36,7 @@ The data was pulled from the riot api using names that were gathered from webscr
 
 
 # Project Summary
+League of Legends
 
 ### Problem Statement:
 
@@ -151,6 +152,12 @@ Following best practices I documented my progress throughout the project and wil
 <!-- Describe your prepare process -->
 - From json files that were gathered from the Riot api, functions were created that would build a dataframe of both team, and individual stats from the 20 minute mark.
 - Columns were renamed to change the team id's of 100 to blue and 200 to red.
+- Replaced nulls with zero.
+- Split data for exploration.
+**Feature Engineering**
+- Gold difference
+- MVP stats
+
 
 ### Explore
 [(Back to top)](#table-of-contents)
@@ -160,12 +167,24 @@ Following best practices I documented my progress throughout the project and wil
 ### Model
 [(Back to top)](#table-of-contents)
 <!-- Describe your modeling process -->
+- Split the data into X and y groups.
+- Split into train and test datasets.
+- Utilized cross validation and grid search.
+- Created optimized random forest classifier.
+**Model accuracy**
+- ~95% mean cross validation accuracy.
+- Best performing fe
 
+- Refit the best performing model on our entire train dataset.
 
 ### Evaluate
 [(Back to top)](#table-of-contents)
 <!-- Describe your evaluation process -->
+**Test Accuracy**
 
+**Test Precision**
+
+**Test Recall**
 
 # Conclusion
 [(Back to top)](#table-of-contents)
@@ -178,15 +197,9 @@ Following best practices I documented my progress throughout the project and wil
 # Recreate This Project
 [(Back to top)](#table-of-contents)
 <!-- How can they do what you do?-->
-**Easy Recreation**
-- Make a copy of our games_final.csv in order to avoid acquiring through the riot api.
-**Hard Recreation**
-- Make a Riot developer account.
-- Generate a api key.
-- Gather the names of top rated player in League, and use the league api to get each players puuid.
-- Use each players puuid to get a list of matches from their match history.
-- Pull the data from each league match using:
-    "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/battlebud?api_key={api_key}"
+- Make a copy of our final.csv in order to avoid acquiring through the riot api.
+- Use the **rename_cols** function in our prepare.py.
+- Continue working though the project using the functions created to help along the way.
 # Footer
 [(Back to top)](#table-of-contents)
 <!-- LET THEM KNOW WHO YOU ARE (linkedin links) close with a joke. -->
