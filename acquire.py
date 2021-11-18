@@ -6,6 +6,10 @@ from env import api_key
 import time
 import re
 
+def acquire():
+    df = pd.read_csv("final.csv")
+    return df
+
 def get_username(table):
     username_list = []
     for i in range (1,571,6):

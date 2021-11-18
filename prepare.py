@@ -207,7 +207,7 @@ def get_player_stats(data, time):
 def reprep_json(start,stop,final_df):
     for i in range(start,stop+1):
         timeline_data = pd.read_json(f'/users/jaredvahle/personal-work/league_of_legends_capstone/capstone/jared/json_folder/timeline_data_{i}.json')
-        game_data = pd.read_json(f'/users/jaredvahle/personal-work/league_of_legends_capstone/capstone/jared/json_folder/game_data_{i}.json')
+        game_data = pd.read_json(f'/users/jaredvahle/persol-work/league_of_legends_capstone/capstone/jared/json_folder/game_data_{i}.json')
         timeline_list = timeline_data.to_dict(orient = 'records')
         game_list = game_data.to_dict(orient = 'records')
         df = prepare.prepare(timeline_list, game_list, time = 20)
