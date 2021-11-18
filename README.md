@@ -164,11 +164,11 @@ Following best practices I documented my progress throughout the project and wil
 <!-- Describe your explore process -->
 - Goal: Visualize the data and explore possible relationships. The use of visuals and statistics tests aided in the help to answer my questions. 
 **Hypothesis**
-- The amount of wards affected the outcome of the game
+- The amount of assists affected the outcome of the game
 
 #### Statistical testing:
 - There was a low correlation of -.03 between wards and the result of the game
-- We are 95% confident that Wards greater then 88 had a difference in the outcome of the game with a p value of .03
+- We are 95% confident that 22 or more assists had a difference in the outcome of the game with a negative p value
 
 
 ### Model
