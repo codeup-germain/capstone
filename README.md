@@ -187,14 +187,11 @@ Following best practices I documented my progress throughout the project and wil
 - Split the data into X and y groups and into train and test datasets.
 - Utilized cross validation and grid search.
 - Created optimized random forest classifier.
-- Best performing fe
 - Refit the best performing model on our entire train dataset.
 
 **Model accuracy**
 
 - ~95% mean cross validation accuracy.
-- Best performing fe
-
 - Refit the best performing model on our entire train dataset.
 
 ### Evaluate
